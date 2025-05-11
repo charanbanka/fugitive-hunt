@@ -9,7 +9,6 @@ import {
   getCitiesData,
   getVehiclesData,
   checkCriminal,
-  getCriminalImage,
   getCopsData,
   getCriminalData,
 } from "@/services/gameServices";
@@ -37,7 +36,7 @@ export type Vehicle = {
 export type Cop = {
   id: number;
   name: string;
-  image: string;
+  image?: string;
   selectedCity?: City | null;
   selectedVehicle?: Vehicle | null;
   canReachDestination?: boolean;
@@ -172,7 +171,6 @@ export function GameProvider({ children }: GameProviderProps) {
     setGameCompleted(false);
     setSuccessfulCop(null);
   };
-  console.log("cops", cops);
   const selectCity = (cityId: number) => {
     const updatedCops = [...cops];
     const selectedCity = cities.find((city) => city.id === cityId) || null;

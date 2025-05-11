@@ -2,7 +2,7 @@ const { fetchData, fetchFile } = require("../services/data-service");
 const { SERVICE_SUCCESS, SERVICE_FAILURE } = require("../common/constants");
 
 const getCities = async (req, res) => {
-  console.log("inside");
+ 
   const result = await fetchData("cities.json");
   if (result.status === SERVICE_SUCCESS) {
     res.status(200).json(result.data);

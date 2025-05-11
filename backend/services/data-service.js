@@ -5,9 +5,7 @@ const { SERVICE_SUCCESS, SERVICE_FAILURE } = require("../common/constants");
 const fetchData = async (fileName) => {
   try {
     const filePath = path.join(__dirname, "../assets/data", fileName);
-    console.log("file", filePath);
     const data = await fs.readFileSync(filePath, "utf-8");
-    console.log("data", data);
     return { status: SERVICE_SUCCESS, data: JSON.parse(data) };
   } catch (error) {
     return { status: SERVICE_FAILURE, error: error.message };

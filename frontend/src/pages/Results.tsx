@@ -39,9 +39,6 @@ const Results: React.FC = () => {
     navigate("/");
   };
 
-  // if (!criminal?.hiddenCity) return null;
-  console.log("cro", criminal);
-
   return (
     <div className=" bg-[url('https://images.unsplash.com/photo-1557683304-673a23048d34?q=80&w=2429&auto=format&fit=crop&ixlib=rb-4.0.3')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/60 flex flex-col">
       <div className="container mx-auto px-4 py-8 flex-1">

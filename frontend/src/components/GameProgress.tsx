@@ -17,7 +17,7 @@ const GameProgress: React.FC<GameProgressProps> = ({ current, total, phase }) =>
         <span>{Math.round(percentage)}%</span>
       </div>
       <div className="w-full bg-secondary rounded-full h-2">
-        <div 
+        <div  role="progressbar" 
           className="bg-primary h-2 rounded-full transition-all duration-300 ease-in-out"
           style={{ width: `${percentage}%` }}
         ></div>

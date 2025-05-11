@@ -23,8 +23,6 @@ const VehicleCard: React.FC<VehicleCardProps> = ({
     ${isSelected ? 'selected-card text-white' : ''}
     ${isDisabled ? 'disabled-card' : ''}
   `;
-
-  console.log("is",isSelected,isDisabled)
   
   const cityDistance = selectedCity?.distance || 0;
   const canReachCity = vehicle.range >= cityDistance * 2;

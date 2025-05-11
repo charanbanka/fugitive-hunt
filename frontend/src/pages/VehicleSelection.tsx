@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGameContext } from "@/context/GameContext";
 import { Button } from "@/components/ui/button";
@@ -26,7 +26,7 @@ const VehicleSelection: React.FC = () => {
   const currentCop = cops[actualCopIndex];
 
   useEffect(() => {
-    setCurrentCopIndex(0);
+    if (setCurrentCopIndex) setCurrentCopIndex(0);
   }, []);
 
   // Redirect if game hasn't started or not all cops have selected cities
@@ -71,15 +71,13 @@ const VehicleSelection: React.FC = () => {
   const isVehicleDisabled = (vehicle: any) => {
     return (
       vehicle.available <= 0 ||
-      currentCop.selectedCity.distance * 2 > vehicle.range
+      (currentCop.selectedCity?.distance || 0) * 2 > vehicle.range
     );
   };
 
-  const isMissionNotComplete = () => {
-    return vehicles.some((v) => isVehicleDisabled(v));
-  };
-  console.log("vehivles", vehicles);
-  console.log("isMissionComplete", isMissionNotComplete());
+  const isMissionNotComplete = useMemo(() => {
+    return vehicles.some((vehicle) => !isVehicleDisabled(vehicle));
+  }, [vehicles]);
 
   return (
     <div className=" bg-[url('https://images.unsplash.com/photo-1557683304-673a23048d34?q=80&w=2429&auto=format&fit=crop&ixlib=rb-4.0.3')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/60 flex flex-col">
@@ -146,13 +144,9 @@ const VehicleSelection: React.FC = () => {
 
             <Button
               onClick={handleNext}
-              disabled={
-                !currentCop.selectedVehicle &&
-                vehicles.some((vehicle) => !isVehicleDisabled(vehicle))
-              }
+              disabled={!currentCop.selectedVehicle && isMissionNotComplete}
               className={
-                !currentCop.selectedVehicle &&
-                vehicles.some((vehicle) => !isVehicleDisabled(vehicle))
+                !currentCop.selectedVehicle && isMissionNotComplete
                   ? "opacity-50 cursor-not-allowed game-button"
                   : "game-button"
               }
