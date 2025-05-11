@@ -20,7 +20,7 @@ const VehicleCard: React.FC<VehicleCardProps> = ({
 }) => {
   const cardClasses = `
     vehicle-card card-hover
-    ${isSelected ? 'selected-card' : ''}
+    ${isSelected ? 'selected-card text-white' : ''}
     ${isDisabled ? 'disabled-card' : ''}
   `;
 
@@ -46,14 +46,14 @@ const VehicleCard: React.FC<VehicleCardProps> = ({
       className={cardClasses}
       onClick={isDisabled ? undefined : onClick}
     >
-      <img src={vehicle.imageUrl} alt={vehicle.type} className="vehicle-image" />
+      <img src={vehicle.imageUrl} alt={vehicle.type} className="vehicle-image h-[150px]" />
       
       <div className="flex justify-between items-center mb-2">
         <div className="flex items-center gap-2">
           {getVehicleIcon()}
           <h3 className="font-bold">{vehicle.type}</h3>
         </div>
-        <div className="text-xs bg-secondary px-2 py-1 rounded">
+        <div className="text-xs bg-secondary px-2 py-1 rounded text-black">
           Available: {vehicle.available}/{vehicle.count}
         </div>
       </div>

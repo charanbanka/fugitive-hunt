@@ -12,7 +12,7 @@ interface CityCardProps {
 const CityCard: React.FC<CityCardProps> = ({ city, isSelected, isDisabled, onClick }) => {
   const cardClasses = `
     city-card card-hover
-    ${isSelected ? 'selected-card' : ''}
+    ${isSelected ? 'selected-card text-white' : ''}
     ${isDisabled ? 'disabled-card' : ''}
   `;
   
@@ -27,11 +27,11 @@ const CityCard: React.FC<CityCardProps> = ({ city, isSelected, isDisabled, onCli
       className={cardClasses}
       onClick={isDisabled ? undefined : onClick}
     >
-      <img src={city.imageUrl} alt={city.name} className="city-image" />
+      <img src={city.imageUrl} alt={city.name} className="city-image h-[150px]" />
       
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-bold">{city.name}</h3>
-        <div className="px-3 py-1 rounded-full bg-secondary text-sm">
+        <div className="px-3 py-1 rounded-full bg-secondary text-sm text-black">
           {city.distance} km
         </div>
       </div>

@@ -74,13 +74,17 @@ const VehicleSelection: React.FC = () => {
       currentCop.selectedCity.distance * 2 > vehicle.range
     );
   };
-console.log("vehivles",vehicles)
-  return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <div className="container mx-auto px-4 py-8 flex-1">
-        
 
-        <div className="max-w-5xl mx-auto animate-enter">
+  const isMissionNotComplete = () => {
+    return vehicles.some((v) => isVehicleDisabled(v));
+  };
+  console.log("vehivles", vehicles);
+  console.log("isMissionComplete", isMissionNotComplete());
+
+  return (
+    <div className=" bg-[url('https://images.unsplash.com/photo-1557683304-673a23048d34?q=80&w=2429&auto=format&fit=crop&ixlib=rb-4.0.3')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/60 flex flex-col">
+      <div className="container mx-auto px-4 py-8 flex-1">
+        <div className="max-w-7xl mx-auto animate-enter">
           <h1 className="page-title">Choose Electric Vehicle</h1>
           <p className="page-subtitle">
             {currentCop.name} needs to select a vehicle to reach{" "}
@@ -88,10 +92,10 @@ console.log("vehivles",vehicles)
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 text-white mt-9">
               <CopCard cop={currentCop} isActive={true} showDetails={true} />
 
-              <div className="bg-card p-4 rounded-lg mt-4 shadow-sm border border-muted">
+              <div className="bg-card p-4 rounded-lg mt-4 shadow-sm border border-muted text-black">
                 <h3 className="font-bold mb-2">Distance Requirements</h3>
                 <p className="text-sm mb-4">
                   Select a vehicle with sufficient range to reach{" "}
@@ -116,7 +120,7 @@ console.log("vehivles",vehicles)
             </div>
 
             <div className="lg:col-span-2">
-              <h3 className="font-bold mb-4">Available Vehicles</h3>
+              <h3 className="font-bold mb-4 text-white">Available Vehicles</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {vehicles?.map((vehicle) => (
                   <VehicleCard
@@ -142,9 +146,13 @@ console.log("vehivles",vehicles)
 
             <Button
               onClick={handleNext}
-              disabled={!currentCop.selectedVehicle}
+              disabled={
+                !currentCop.selectedVehicle &&
+                vehicles.some((vehicle) => !isVehicleDisabled(vehicle))
+              }
               className={
-                !currentCop.selectedVehicle
+                !currentCop.selectedVehicle &&
+                vehicles.some((vehicle) => !isVehicleDisabled(vehicle))
                   ? "opacity-50 cursor-not-allowed game-button"
                   : "game-button"
               }

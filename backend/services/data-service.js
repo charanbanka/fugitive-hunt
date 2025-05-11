@@ -66,7 +66,7 @@ const checkCriminal = async (cops) => {
 
     // Filter cops who can reach the random city
     const copsWhoCanCatch = cops.find(
-      (cop) => cop.selectedCity?.id === randomCity.id
+      (cop) => cop.canReachDestination && cop.selectedCity?.id === randomCity.id
     );
 
     // Fetch criminal data

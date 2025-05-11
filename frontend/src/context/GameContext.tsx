@@ -57,6 +57,7 @@ type GameContextType = {
   loading: boolean;
   successfulCop: Cop | null;
   selectCity: (cityId: number) => void;
+  startVehicle: () => void;
   selectVehicle: (vehicleId: number) => void;
   startGame: () => Promise<void>;
   resetGame: () => void;
@@ -127,7 +128,6 @@ export function GameProvider({ children }: GameProviderProps) {
             getVehiclesData(),
           ]);
 
-        console.log("cps", copsData);
         setCops(copsData);
         setCriminal(criminalData);
         setCities(citiesData);
@@ -153,7 +153,14 @@ export function GameProvider({ children }: GameProviderProps) {
   };
 
   const resetGame = () => {
-    setCops(copsData);
+    setCops((prevCops) =>
+      prevCops.map((cop) => ({
+        ...cop,
+        selectedCity: null,
+        selectedVehicle: null,
+        canReachDestination: false,
+      }))
+    );
     setVehicles((prevVehicles) =>
       prevVehicles.map((v) => ({ ...v, available: v.count }))
     );
@@ -165,7 +172,7 @@ export function GameProvider({ children }: GameProviderProps) {
     setGameCompleted(false);
     setSuccessfulCop(null);
   };
-
+  console.log("cops", cops);
   const selectCity = (cityId: number) => {
     const updatedCops = [...cops];
     const selectedCity = cities.find((city) => city.id === cityId) || null;
@@ -182,6 +189,15 @@ export function GameProvider({ children }: GameProviderProps) {
       value = true;
     }
 
+    setCops(updatedCops);
+  };
+
+  const startVehicle = () => {
+    // Update cop with selected vehicle
+    const updatedCops = cops.map((cop) => ({ ...cop, selectedVehicle: null }));
+    const updatedVehicles = vehicles.map((v) => ({ ...v, available: v.count }));
+
+    setVehicles(updatedVehicles);
     setCops(updatedCops);
   };
 
@@ -252,7 +268,7 @@ export function GameProvider({ children }: GameProviderProps) {
       // Make API call to check if any cop caught the criminal
       let resp = await checkCriminal(cops);
       const result = resp; // Directly use 'resp' if 'CheckCriminalResult' contains the required properties
-      console.log("result", result);
+
       if (result.found) {
         setSuccessfulCop(result.successfulCop);
       } else {
@@ -267,7 +283,6 @@ export function GameProvider({ children }: GameProviderProps) {
       setLoading(false);
     }
   };
-  console.log("data", successfulCop, criminal);
 
   return (
     <GameContext.Provider
@@ -283,6 +298,7 @@ export function GameProvider({ children }: GameProviderProps) {
         loading,
         successfulCop,
         selectCity,
+        startVehicle,
         selectVehicle,
         startGame,
         resetGame,
