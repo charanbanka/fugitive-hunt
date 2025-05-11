@@ -35,8 +35,10 @@ app.get("/health", (req, res) => {
 app.use("/api", dataRoutes);
 app.use("/api", criminalRoutes);
 
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running at port: ${PORT}`);
+  });
+}
 
-// Database connection
-app.listen(PORT, () => {
-  console.log(`Server running at port: ${PORT}`);
-});
+module.exports = app; // Export the app for testing

@@ -49,8 +49,8 @@ const getRandomCity = async () => {
       throw new Error("Failed to fetch cities data");
     }
   } catch (error) {
-    console.error("Error in getRandomCity:", error.message);
-    throw new Error("Failed to select a random city");
+    console.log("Error in getRandomCity:", error.message);
+    throw new Error(error.message)
   }
 };
 
@@ -95,7 +95,7 @@ const checkCriminal = async (cops) => {
       },
     };
   } catch (error) {
-    console.error("Error in checkCriminal:", error.message);
+    console.log("Error in checkCriminal:", error.message);
     // throw new Error("Failed to check criminal");
     return {
       status: SERVICE_FAILURE,
@@ -104,4 +104,4 @@ const checkCriminal = async (cops) => {
   }
 };
 
-module.exports = { fetchData, fetchFile, checkCriminal };
+module.exports = { fetchData, fetchFile, checkCriminal, getRandomCity };
