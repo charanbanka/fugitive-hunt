@@ -1,14 +1,13 @@
 
 # 🚔 Cop & Fugitive Game
 
-A dynamic and interactive game where three cops hunt a fugitive hiding in one of five cities. Each cop selects a unique city and an electric vehicle with sufficient range for a round trip. The backend randomly assigns the fugitive's location and determines the outcome.
-
+A thrilling game where three cops hunt a fugitive hiding in one of five cities. Each cop selects a unique city and an electric vehicle with enough range for a round trip. The backend randomly assigns the fugitive's location and determines the outcome.
 
 ---
 
 ## 🌟 Features
 
-- 🎮 Engaging multi-step game flow with intuitive sidebar navigation
+- 🎮 Interactive multi-step game flow with "Previous" and "Next" navigation buttons
 - 📱 Fully responsive UI with sleek Tailwind CSS animations
 - 🚗 Smart vehicle selection ensuring round-trip feasibility
 - 🎯 Randomized fugitive location for unpredictable gameplay
@@ -50,8 +49,8 @@ A dynamic and interactive game where three cops hunt a fugitive hiding in one of
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/cop-fugitive-game.git
-cd cop-fugitive-game
+git clone https://github.com/charanbanka/fugitive-hunt
+cd fugitive-hunt
 ```
 
 #### 2. Backend Setup
@@ -99,8 +98,18 @@ npm test:coverage
 
 ## 🌍 Live Demo
 
-- **Frontend:** [Netlify Deployment](https://your-netlify-url.netlify.app) <!-- Update with actual URL -->
-- **Backend:** [Render Deployment](https://your-render-url.onrender.com) <!-- Update with actual URL -->
+- **Frontend:** https://resplendent-mooncake-7ae373.netlify.app
+- **Backend:** https://fugitive-hunt-lg0k.onrender.com/health
+
+---
+
+## Backend Routes
+1. Cities - https://fugitive-hunt-lg0k.onrender.com/api/cities
+2. Officers - https://fugitive-hunt-lg0k.onrender.com/api/officers
+3. Vehicles - https://fugitive-hunt-lg0k.onrender.com/api/vehicles
+4. Crimials - https://fugitive-hunt-lg0k.onrender.com/api/criminals
+5. Fetch File - https://fugitive-hunt-lg0k.onrender.com/api/file/officer1
+6. Check Criminal / result - https://fugitive-hunt-lg0k.onrender.com/api/check-criminal
 
 ---
 
@@ -118,6 +127,7 @@ npm test:coverage
 
 ## 🛠️ Development Notes
 
+- **Navigation Update:** Replaced sidebar navigation with "Previous" and "Next" buttons for a more streamlined user experience, as seen in the city-selection page.
 - The frontend uses `useContext` for efficient state management across components.
 - Tailwind CSS ensures a responsive and modern UI with minimal effort.
 - Backend logic is lightweight, using Express with in-memory data for simplicity.
@@ -127,8 +137,8 @@ npm test:coverage
 
 ## 📁 Assets
 
-- Sample images can be sourced from [Unsplash](https://unsplash.com/) or other free stock photo platforms.
-- Replace placeholder images (e.g., screenshot above) with actual game visuals for better appeal.
+- Screenshots of the home and city-selection pages are included above.
+- Additional images can be sourced from [Unsplash](https://unsplash.com/) or other free stock photo platforms.
 
 ---
 
@@ -144,41 +154,5 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 📬 Contact
-
-Have questions or suggestions? Reach out via [GitHub Issues](https://github.com/your-username/cop-fugitive-game/issues) or connect with me on [X](https://x.com/your-username).
-
----
-
-*Built with 💻 by [Your Name](https://github.com/your-username) | Powered by [xAI's Grok](https://x.ai/grok)*
-
----
-
-### Key Improvements Made
-
-1. **Enhanced Structure:** Organized sections with clear headings and emojis for visual appeal.
-2. **Professional Tone:** Polished language to make it concise yet informative.
-3. **Visual Placeholder:** Added a placeholder for a screenshot (replace with an actual game image).
-4. **Contributing Section:** Included a standard contribution guide to encourage collaboration.
-5. **License & Contact:** Added MIT license and contact info for completeness.
-6. **Live Demo Links:** Kept placeholders for Netlify/Render URLs (update with real links).
-7. **GitHub-Friendly Formatting:** Used markdown best practices (e.g., code blocks, lists, badges).
-8. **Assumptions Clarified:** Streamlined the assumptions section to avoid repetition.
-9. **Tech Stack Details:** Specified tools (e.g., Jest, Vite) for clarity.
-10. **Call to Action:** Encouraged engagement via GitHub Issues and X.
-
-### Next Steps
-
-- **Update URLs:** Replace placeholder Netlify/Render URLs with actual deployment links.
-- **Add Screenshots:** Include a real game screenshot or animated GIF to showcase the UI.
-- **Badges:** Add GitHub badges (e.g., build status, license, deployment) at the top for extra polish.
-- **Customize Author Info:** Update "Your Name" and "your-username" with your actual details.
-- **Test Instructions:** If specific test frameworks (e.g., Jest, Vitest) or tools are used, mention them explicitly.
-
-This README is now ready to shine on GitHub! Let me know if you need further tweaks or help with specific sections.
+Let me know if you need further adjustments or assistance with hosting the screenshots
