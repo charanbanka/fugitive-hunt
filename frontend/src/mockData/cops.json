@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Officer Chen",
+    "imageUrl":
+      "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=500&auto=format&fit=crop",
+    "selectedCity": null,
+    "selectedVehicle": null,
+    "canReachDestination": false
+  },
+  {
+    "id": 2,
+    "name": "Officer Rodriguez",
+    "imageUrl":
+      "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=500&auto=format&fit=crop",
+    "selectedCity": null,
+    "selectedVehicle": null,
+    "canReachDestination": false
+  },
+  {
+    "id": 3,
+    "name": "Officer Johnson",
+    "imageUrl":
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop",
+    "selectedCity": null,
+    "selectedVehicle": null,
+    "canReachDestination": false
+  }
+]

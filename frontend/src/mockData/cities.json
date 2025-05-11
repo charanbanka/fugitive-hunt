@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Yapkashnagar",
+    "distance": 60,
+    "imageUrl": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=500&auto=format&fit=crop"
+  },
+  {
+    "id": 2,
+    "name": "Lihaspur",
+    "distance": 50,
+    "imageUrl": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=500&auto=format&fit=crop"
+  },
+  {
+    "id": 3,
+    "name": "Narmis City",
+    "distance": 40,
+    "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&auto=format&fit=crop"
+  },
+  {
+    "id": 4,
+    "name": "Shekharvati",
+    "distance": 30,
+    "imageUrl": "https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=500&auto=format&fit=crop"
+  },
+  {
+    "id": 5,
+    "name": "Nuravgram",
+    "distance": 20,
+    "imageUrl": "https://images.unsplash.com/photo-1470723710355-95304d8aece4?w=500&auto=format&fit=crop"
+  }
+]

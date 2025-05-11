@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "type": "EV Bike",
+    "range": 60,
+    "count": 2,
+    "available": 2,
+    "icon": "bike",
+    "imageUrl": "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop"
+  },
+  {
+    "id": 2,
+    "type": "EV Car",
+    "range": 100,
+    "count": 1,
+    "available": 1,
+    "icon": "car",
+    "imageUrl": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=500&auto=format&fit=crop"
+  },
+  {
+    "id": 3,
+    "type": "EV SUV",
+    "range": 120,
+    "count": 1,
+    "available": 1,
+    "icon": "suv",
+    "imageUrl": "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=500&auto=format&fit=crop"
+  }
+]

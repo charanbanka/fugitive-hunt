@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 250 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 20% 20%;
+
+    --primary: 265 60% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 265 80% 97%;
+    --secondary-foreground: 265 60% 40%;
+
+    --muted: 265 10% 90%;
+    --muted-foreground: 265 10% 50%;
+
+    --accent: 265 40% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 265 15% 85%;
+    --input: 265 15% 85%;
+    --ring: 265 60% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #f8f5ff);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer;
+  }
+
+  .city-card {
+    @apply border border-border/50 rounded-lg p-6 flex flex-col bg-white shadow-md;
+  }
+
+  .vehicle-card {
+    @apply border border-border/50 rounded-lg p-4 flex flex-col bg-white shadow-md;
+  }
+
+  .selected-card {
+    @apply border-2 border-primary bg-primary/10;
+  }
+
+  .disabled-card {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .game-container {
+    @apply max-w-5xl mx-auto px-4 py-8;
+  }
+
+  .page-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-center text-primary;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-subtitle {
+    @apply text-xl md:text-2xl font-medium mb-8 text-center text-muted-foreground;
+  }
+
+  .police-badge {
+    @apply bg-primary text-white px-2 py-1 rounded-full text-xs font-bold;
+  }
+
+  .cop-avatar {
+    @apply w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-2xl border-2 border-white;
+  }
+
+  .game-button {
+    @apply bg-primary hover:bg-primary/90 text-white font-bold py-2 px-6 rounded-lg transition-all;
+  }
+
+  .game-button-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold py-2 px-6 rounded-lg transition-all;
+  }
+
+  .game-button-accent {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-2 px-6 rounded-lg transition-all;
+  }
+
+  .animate-enter {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .cop-image {
+    @apply w-full h-40 object-cover rounded-t-lg;
+  }
+
+  .city-image {
+    @apply w-full h-32 object-cover rounded-t-lg mb-4;
+  }
+
+  .vehicle-image {
+    @apply w-full h-24 object-cover rounded mb-2;
+  }
+
+  .criminal-image {
+    @apply w-32 h-32 object-cover rounded-full mx-auto border-4 border-primary;
+  }
+
+  .app-background {
+    background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
+  }
+
+  .card-gradient {
+    background: linear-gradient(to bottom, #ffffff, #faf8ff);
+    box-shadow: 0 4px 12px rgba(149, 128, 247, 0.1);
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Officer Chen",
+    "selectedCity": null,
+    "selectedVehicle": null,
+    "canReachDestination": false,
+    "fileId":"officer1",
+    "filePath": "assets/images/cops/officer1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Officer Rodriguez",
+    "selectedCity": null,
+    "selectedVehicle": null,
+    "canReachDestination": false,
+    "fileId":"officer2",
+    "filePath": "assets/images/cops/officer2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Officer Johnson",
+    "selectedCity": null,
+    "selectedVehicle": null,
+    "canReachDestination": false,
+    "fileId":"officer3",
+    "filePath": "assets/images/cops/officer3.jpg"
+  }
+]
